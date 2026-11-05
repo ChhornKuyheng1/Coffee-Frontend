@@ -6,7 +6,7 @@ import { Leaf, Eye, EyeOff, Phone, Users, UserRoundCog } from "lucide-react";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-  const [loginText, setLoginText] = useState("User Login");
+  const [loginText, setLoginText] = useState("User login");
   const [loginType, setLoginType] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -14,13 +14,13 @@ export default function Login() {
     setLoading(true);
   };
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-[#F8FAFC]">
+    <main className="w-screen h-screen flex justify-center items-center bg-[#F8FAFC] p-4 md:p-6">
       <div className=" w-100 p-4 rounded-3xl  bg-white border border-[#E2E8F0] md:p-6">
         <div className="w-full h-full flex flex-col items-center space-y-5 p-4 md:p-6">
           <div className=" flex flex-col items-center gap-y-1.5">
             <Leaf size={50} className="text-[#16A34A]" />
             <h1 className="text-2xl font-bold text-[#16A34A] font-serif">
-              Spring Caffe
+              Spring Coffee
             </h1>
           </div>
           <div className="w-full flex gap-3 justify-center items-center">
@@ -29,7 +29,7 @@ export default function Login() {
                 type={loginType ? "primary" : "default"}
                 onClick={() => {
                   setLoginType(true);
-                  setLoginText("Manager Login");
+                  setLoginText("Manager login");
                 }}
                 className="p-2! border! border-gray-300! rounded-lg! "
                 icon={<UserRoundCog size={20} />}
@@ -40,7 +40,7 @@ export default function Login() {
                 type={loginType ? "default" : "primary"}
                 onClick={() => {
                   setLoginType(false);
-                  setLoginText("User Login");
+                  setLoginText("User login");
                 }}
                 className="p-2! border! border-gray-300! rounded-lg! "
                 icon={<Users size={20} />}

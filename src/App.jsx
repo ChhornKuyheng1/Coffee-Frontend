@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
+import "./index.css";
 import OwnerMain from "./pages/ower/OwnerMain";
 
 function App() {
