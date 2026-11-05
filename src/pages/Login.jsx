@@ -14,7 +14,7 @@ export default function Login() {
     setLoading(true);
   };
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-[#F8FAFC] p-4 md:p-6">
+    <main className="w-screen h-screen flex justify-center items-center bg-[#F8FAFC] overflow-hidden p-4 md:p-6">
       <div className=" w-100 p-4 rounded-3xl  bg-white border border-[#E2E8F0] md:p-6">
         <div className="w-full h-full flex flex-col items-center space-y-5 p-4 md:p-6">
           <div className=" flex flex-col items-center gap-y-1.5">
