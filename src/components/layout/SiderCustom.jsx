@@ -1,12 +1,7 @@
 import { Layout, Menu } from "antd";
 const { Sider } = Layout;
 import { User } from "lucide-react";
-export default function SiderCustom({
-  collapsed,
-  item,
-  key,
-  selectable = false,
-}) {
+export default function SiderCustom({ collapsed, item, select, selectable }) {
   const s = [
     {
       key: "1",
@@ -14,6 +9,7 @@ export default function SiderCustom({
       icon: <User />,
     },
   ];
+
   return (
     <Sider
       className="h-full! w-full! border-0! "
@@ -24,8 +20,7 @@ export default function SiderCustom({
       <Menu
         className="h-full! w-full! border-0!"
         mode="inline"
-        defaultSelectedKeys={["1"]}
-        selectedKeys={key}
+        defaultSelectedKeys={[select]}
         selectable={selectable}
         items={s}
       />

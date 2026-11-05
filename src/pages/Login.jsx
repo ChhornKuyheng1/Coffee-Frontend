@@ -1,11 +1,13 @@
 import { useState } from "react";
-import Button from "../components/common/Button";
-import { Form, Input, Avatar } from "antd";
+import Buttons from "../components/common/Button";
+import { Form, Input, Avatar, Button } from "antd";
 
-import { Leaf, Eye, EyeOff, Phone } from "lucide-react";
+import { Leaf, Eye, EyeOff, Phone, Users, UserRoundCog } from "lucide-react";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
+  const [loginText, setLoginText] = useState("User Login");
+  const [loginType, setLoginType] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const login = async () => {
@@ -20,6 +22,30 @@ export default function Login() {
             <h1 className="text-2xl font-bold text-[#16A34A] font-serif">
               Spring Caffe
             </h1>
+          </div>
+          <div className="w-full flex gap-3 justify-center items-center">
+            <div className="flex flex-col items-center">
+              <Button
+                type={loginType ? "primary" : "default"}
+                onClick={() => {
+                  setLoginType(true);
+                  setLoginText("Manager Login");
+                }}
+                className="p-2! border! border-gray-300! rounded-lg! "
+                icon={<UserRoundCog size={20} />}
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <Button
+                type={loginType ? "default" : "primary"}
+                onClick={() => {
+                  setLoginType(false);
+                  setLoginText("User Login");
+                }}
+                className="p-2! border! border-gray-300! rounded-lg! "
+                icon={<Users size={20} />}
+              />
+            </div>
           </div>
           <div className="w-full h-full">
             <Form className="p-4 space-y-5 md:p-6 ">
@@ -64,12 +90,11 @@ export default function Login() {
                   }
                 />
               </div>
-
               <div>
-                <Button
+                <Buttons
                   disabled={loading}
                   loading={loading}
-                  children={"Login"}
+                  children={loginText}
                   onClick={login}
                 />
               </div>

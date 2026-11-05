@@ -18,7 +18,7 @@ export default function OwnerMain() {
     <main className="w-screen h-screen flex  bg-[#F8FAFC]  ">
       <DrawerCustom open={drawer} close={showDrawer} />
       <section className="hidden md:block  h-full bg-white border-r border-[#E2E8F0] ">
-        <SiderCustom collapsed={sider} selectable={true} key={true} />
+        <SiderCustom collapsed={sider} selectable={true} select={"1"} />
       </section>
       <section className="w-full h-full">
         <header>

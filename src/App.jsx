@@ -5,8 +5,8 @@ import OwnerMain from "./pages/ower/OwnerMain";
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route index element={<OwnerMain />}></Route>
+      <Route index element={<Login />} />
+      <Route path="/owner" element={<OwnerMain />}></Route>
     </Routes>
   );
 }

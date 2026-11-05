@@ -22,7 +22,7 @@ export default function DrawerCustom({ open, close, tiem }) {
           <div className="w-12 h-1.5 rounded-full bg-gray-300"></div>
         </div>
         <div className="w-full h-full px-5">
-          <SiderCustom collapsed={false} selectable={false} key={false} />
+          <SiderCustom collapsed={false} selectable={false} select={"0"} />
         </div>
       </div>
     </Drawer>
