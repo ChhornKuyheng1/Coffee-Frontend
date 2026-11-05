@@ -1,0 +1,41 @@
+/* Clean Ant Design Table */
+
+.clean-table .ant-table {
+  font-size: 14px;
+}
+
+/* Header */
+.clean-table .ant-table-thead > tr > th {
+  background: #f9fafb !important;
+  color: black !important;
+  font-weight: 500 !important;
+  font-size: 13px;
+  padding: 14px 20px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Body */
+.clean-table .ant-table-tbody > tr > td {
+  color: #374151;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+}
+
+/* Hover */
+.clean-table .ant-table-tbody > tr:hover > td {
+  background: #f9fafb !important;
+}
+
+/* Remove extra bottom margin
+.clean-table .ant-pagination {
+  margin: 16px 20px !important;
+} */
+
+/* Pagination active */
+/* .clean-table .ant-pagination .ant-pagination-item-active {
+  border-color: #2563eb !important;
+}
+
+.clean-table .ant-pagination .ant-pagination-item-active a {
+  color: #2563eb !important;
+} */
