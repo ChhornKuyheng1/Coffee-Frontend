@@ -3,18 +3,17 @@ import Buttons from "../components/common/Button";
 import { Form, Input, Avatar, Button } from "antd";
 
 import { Leaf, Eye, EyeOff, Phone, Users, UserRoundCog } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-  const [loginText, setLoginText] = useState("User login");
-  const [loginType, setLoginType] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+  const goto = useNavigate();
   const login = async () => {
-    setLoading(true);
+    goto("/owner/branch");
   };
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-[#F8FAFC] overflow-hidden p-4 md:p-6">
+    <main className="w-dvw h-dvh flex justify-center items-center bg-[#F8FAFC] overflow-hidden p-4 md:p-6">
       <div className=" w-100 p-4 rounded-3xl  bg-white border border-[#E2E8F0] md:p-6">
         <div className="w-full h-full flex flex-col items-center space-y-5 p-4 md:p-6">
           <div className=" flex flex-col items-center gap-y-1.5">
@@ -22,30 +21,6 @@ export default function Login() {
             <h1 className="text-2xl font-bold text-[#16A34A] font-serif">
               Spring Coffee
             </h1>
-          </div>
-          <div className="w-full flex gap-3 justify-center items-center">
-            <div className="flex flex-col items-center">
-              <Button
-                type={loginType ? "primary" : "default"}
-                onClick={() => {
-                  setLoginType(true);
-                  setLoginText("Manager login");
-                }}
-                className="p-2! border! border-gray-300! rounded-lg! "
-                icon={<UserRoundCog size={20} />}
-              />
-            </div>
-            <div className="flex flex-col items-center">
-              <Button
-                type={loginType ? "default" : "primary"}
-                onClick={() => {
-                  setLoginType(false);
-                  setLoginText("User login");
-                }}
-                className="p-2! border! border-gray-300! rounded-lg! "
-                icon={<Users size={20} />}
-              />
-            </div>
           </div>
           <div className="w-full h-full">
             <Form className="p-4 space-y-5 md:p-6 ">
@@ -94,7 +69,7 @@ export default function Login() {
                 <Buttons
                   disabled={loading}
                   loading={loading}
-                  children={loginText}
+                  children={"Login"}
                   onClick={login}
                 />
               </div>

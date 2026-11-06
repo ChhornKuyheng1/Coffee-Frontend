@@ -2,7 +2,7 @@ import { Drawer } from "antd";
 import SiderCustom from "./SiderCustom";
 import { Menu } from "lucide-react";
 
-export default function DrawerCustom({ open, close, tiem }) {
+export default function DrawerCustom({ open, close, item }) {
   return (
     <Drawer
       open={open}
@@ -22,7 +22,12 @@ export default function DrawerCustom({ open, close, tiem }) {
           <div className="w-12 h-1.5 rounded-full bg-gray-300"></div>
         </div>
         <div className="w-full h-full px-5">
-          <SiderCustom collapsed={false} selectable={false} select={"0"} />
+          <SiderCustom
+            collapsed={false}
+            selectable={false}
+            select={"0"}
+            item={item}
+          />
         </div>
       </div>
     </Drawer>

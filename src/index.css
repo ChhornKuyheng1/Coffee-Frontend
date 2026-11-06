@@ -1,9 +1,10 @@
 @import "tailwindcss";
-body {
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
+
 p {
   color: #0f172a;
   font-family: "Inter", sans-serif;
+}
+
+body {
+  padding: 0;
 }
