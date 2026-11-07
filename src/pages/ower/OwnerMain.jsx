@@ -1,4 +1,4 @@
-import { LayoutDashboardIcon, Share2, Sidebar } from "lucide-react";
+import { LayoutDashboardIcon, Share2, Sidebar, Users } from "lucide-react";
 import HeaderCustom from "../../components/layout/HeaderCustom";
 import SiderCustom from "../../components/layout/SiderCustom";
 import { useState } from "react";
@@ -20,36 +20,48 @@ export default function OwnerMain() {
     {
       key: "1",
       label: "Dashboard",
-      icon: <LayoutDashboardIcon />,
+      icon: <LayoutDashboardIcon size={20} />,
     },
     {
       key: "2",
       label: "Branch",
-      icon: <Share2 />,
+      icon: <Share2 size={20} />,
       onClick: () => {
         goto("branch");
       },
     },
+    {
+      key: "3",
+      label: "User",
+      icon: <Users size={20} />,
+      onClick: () => {
+        goto("user");
+      },
+    },
   ];
   return (
-    <div className="w-dvw h-dvh flex  overflow-hidden bg-[#F8FAFC]  ">
+    <div className="h-dvh w-dvw flex overflow-hidden bg-[#F8FAFC]  ">
       <DrawerCustom open={drawer} close={showDrawer} item={items} />
-      <section className="hidden md:block h-full bg-white border-r border-[#E2E8F0] pt-3 ">
-        <SiderCustom
-          collapsed={sider}
-          selectable={true}
-          select={"1"}
-          item={items}
-        />
-      </section>
-      <section className="w-full h-full">
-        <header>
-          <HeaderCustom showDrawer={showDrawer} showSider={showSider} />
-        </header>
-        <main>
-          <Outlet />
-        </main>
-      </section>
+      <div className="flex w-full h-full">
+        <section className="hidden md:block h-full bg-white border-r border-[#E2E8F0] pt-3">
+          <SiderCustom
+            collapsed={sider}
+            selectable={true}
+            select={"1"}
+            item={items}
+          />
+        </section>
+        <section className="w-full h-full flex flex-col">
+          <header>
+            <HeaderCustom showDrawer={showDrawer} showSider={showSider} />
+          </header>
+          <main className="md:p-6 w-full h-full overflow-hidden">
+            <div className="w-full h-full overflow-y-scroll hide-scrollbar">
+              <Outlet />
+            </div>
+          </main>
+        </section>
+      </div>
     </div>
   );
 }

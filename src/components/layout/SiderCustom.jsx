@@ -10,7 +10,7 @@ export default function SiderCustom({ collapsed, item, select, selectable }) {
       collapsed={collapsed}
     >
       <Menu
-        className="h-full! w-full! border-0! space-y-4!"
+        className="h-full! w-full! border-0!"
         mode="inline"
         defaultSelectedKeys={[select]}
         selectable={selectable}
